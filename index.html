@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cynosure – Employee Self Service</title>
+
+  <!-- Bootstrap 5 CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css"/>
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css"/>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"/>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<!-- Sidebar overlay (mobile) -->
+<div id="sidebar-overlay"></div>
+
+<!-- ══════════ SIDEBAR ══════════ -->
+<aside id="sidebar">
+  <div class="brand">
+    <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+      <rect width="28" height="28" rx="6" fill="#1a56db"/>
+      <circle cx="14" cy="14" r="6" fill="white" opacity=".9"/>
+      <circle cx="14" cy="14" r="3" fill="#1a56db"/>
+    </svg>
+    <span>CYNOSURE</span>
+  </div>
+  <nav>
+    <div class="nav-item-s" title="Apps"><i class="bi bi-grid-3x3-gap-fill"></i><span class="nav-label">Apps</span></div>
+    <div class="nav-item-s active" title="Dashboard"><i class="bi bi-speedometer2"></i><span class="nav-label">Dashboard</span></div>
+    <div class="nav-item-s" title="People"><i class="bi bi-people-fill"></i><span class="nav-label">People</span></div>
+    <div class="nav-item-s" title="Analytics"><i class="bi bi-bar-chart-fill"></i><span class="nav-label">Analytics</span></div>
+    <div class="nav-item-s" title="Projects"><i class="bi bi-kanban-fill"></i><span class="nav-label">Projects</span></div>
+    <div class="nav-item-s" title="Chat"><i class="bi bi-chat-dots-fill"></i><span class="nav-label">Chat</span></div>
+    <div class="nav-item-s" title="Reports"><i class="bi bi-file-earmark-bar-graph-fill"></i><span class="nav-label">Reports</span></div>
+    <div class="nav-item-s" title="Help"><i class="bi bi-question-circle-fill"></i><span class="nav-label">Help</span></div>
+  </nav>
+  <div class="nav-item-s" style="margin-bottom:4px" title="Power"><i class="bi bi-power"></i><span class="nav-label">Logout</span></div>
+</aside>
+
+<!-- ══════════ MAIN WRAP ══════════ -->
+<div id="main-wrap">
+
+  <!-- TOPBAR -->
+  <header id="topbar">
+    <button class="btn-toggle-sidebar" id="btnToggleSidebar" aria-label="Toggle sidebar">
+      <i class="bi bi-list"></i>
+    </button>
+    <span class="page-title">Dashboard</span>
+    <div class="spacer"></div>
+    <div class="fy-badge"><i class="bi bi-calendar3"></i> 2025–2026 <i class="bi bi-chevron-down" style="font-size:.65rem"></i></div>
+    <span class="welcome-text">Welcome, Employee</span>
+    <div class="d-flex align-items-center gap-2 ms-2">
+      <i class="bi bi-link-45deg" style="font-size:1.1rem;color:var(--text-muted);cursor:pointer"></i>
+      <div style="width:32px;height:32px;border-radius:50%;background:var(--primary);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:.8rem;cursor:pointer">K</div>
+    </div>
+  </header>
+
+  <!-- PAGE BODY -->
+  <main id="page-body">
+
+    <!-- Greeting -->
+    <div class="greeting-row">
+      <h1>Hello kamlesh, 👋</h1>
+      <button class="btn-create"><i class="bi bi-plus-lg"></i> Create</button>
+    </div>
+
+    <!-- ── Stat Cards Row ── -->
+    <div class="row g-3 mb-3">
+      <div class="col-6 col-md-3">
+        <div class="stat-card">
+          <div class="icon-wrap" style="background:var(--primary-soft);color:var(--primary)"><i class="bi bi-camera-video-fill"></i></div>
+          <span class="label">Todays Meeting</span>
+          <span class="value" data-count="12">0</span>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="stat-card">
+          <div class="icon-wrap" style="background:var(--purple-soft);color:var(--purple)"><i class="bi bi-clipboard2-check-fill"></i></div>
+          <span class="label">Todays Task</span>
+          <span class="value" data-count="12">0</span>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="stat-card">
+          <div class="icon-wrap" style="background:var(--accent-soft);color:var(--accent)"><i class="bi bi-hourglass-split"></i></div>
+          <span class="label">Total Pending task</span>
+          <span class="value" data-count="12">0</span>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="stat-card">
+          <div class="icon-wrap" style="background:var(--danger-soft);color:var(--danger)"><i class="bi bi-calendar2-event-fill"></i></div>
+          <span class="label">Todays Meeting</span>
+          <span class="value" data-count="12">0</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Row -->
+    <div class="row g-3">
+
+      <!-- LEFT COLUMN -->
+      <div class="col-12 col-lg-8">
+        <div class="row g-3">
+
+          <!-- To Do List -->
+          <div class="col-12 col-md-6">
+            <div class="section-card">
+              <div class="section-header">
+                <span class="section-title">To Do List</span>
+                <div class="actions">
+                  <select class="filter-select"><option>Today</option><option>This Week</option><option>This Month</option></select>
+                  <button class="btn-add-sm"><i class="bi bi-plus"></i></button>
+                </div>
+              </div>
+              <div class="section-body scroll-body" id="todo-list">
+              </div>
+            </div>
+          </div>
+
+          <!-- Meeting -->
+          <div class="col-12 col-md-6">
+            <div class="section-card">
+              <div class="section-header">
+                <span class="section-title">Meeting</span>
+                <div class="actions">
+                  <select class="filter-select"><option>Today</option><option>This Week</option></select>
+                  <button class="btn-add-sm"><i class="bi bi-plus"></i></button>
+                </div>
+              </div>
+              <div class="section-body scroll-body" id="meeting-list">
+              </div>
+            </div>
+          </div>
+
+          <!-- Ongoing Projects -->
+          <div class="col-12 col-md-6">
+            <div class="section-card">
+              <div class="section-header">
+                <span class="section-title">Ongoing Projects</span>
+              </div>
+              <div class="section-body scroll-body" id="projects-list">
+              </div>
+            </div>
+          </div>
+
+          <!-- Tasks in Review -->
+          <div class="col-12 col-md-6">
+            <div class="section-card">
+              <div class="section-header">
+                <span class="section-title">Tasks in Review</span>
+              </div>
+              <div class="section-body scroll-body" id="tasks-review-list">
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /inner row -->
+      </div><!-- /left col -->
+
+      <!-- RIGHT COLUMN -->
+      <div class="col-12 col-lg-4">
+        <div class="d-flex flex-column gap-3">
+
+          <!-- Upcoming Events -->
+          <div class="section-card">
+            <div class="section-header">
+              <span class="section-title">Upcoming Events</span>
+              <div class="actions">
+                <button class="btn-add-sm" style="background:transparent;border:1px solid var(--border);color:var(--text-muted)"><i class="bi bi-chevron-left"></i></button>
+                <button class="btn-add-sm"><i class="bi bi-chevron-right"></i></button>
+              </div>
+            </div>
+            <div class="event-card-wrap">
+              <div class="event-date-box">
+                <span class="month">July</span>
+                <span class="day">03</span>
+              </div>
+              <div class="event-right">
+                <div class="event-name">Project Kickoff</div>
+                <div class="event-detail">The event details will come here in this line...</div>
+                <div class="event-time"><i class="bi bi-clock"></i> 12:00 PM</div>
+              </div>
+              <div class="event-end-badge">05<br><span style="font-size:.65rem;font-weight:400">July</span></div>
+            </div>
+          </div>
+
+          <!-- Feed -->
+          <div class="section-card">
+            <div class="section-header">
+              <span class="section-title">Feed <span style="background:var(--primary);color:#fff;border-radius:20px;padding:1px 7px;font-size:.72rem;margin-left:4px">2</span></span>
+            </div>
+            <div class="feed-tabs">
+              <button class="feed-tab-btn active" data-tab="all">View All</button>
+              <button class="feed-tab-btn" data-tab="unread">Unread (2)</button>
+              <span class="mark-all">Mark all as read</span>
+            </div>
+            <div id="feed-container" style="max-height:340px;overflow-y:auto">
+            </div>
+          </div>
+
+        </div>
+      </div><!-- /right col -->
+
+    </div><!-- /main row -->
+
+  </main>
+</div><!-- /main-wrap -->
+
+<!-- Bootstrap 5 JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+<!-- jQuery -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<!-- Custom JS -->
+<script src="script.js"></script>
+
+</body>
+</html>
